@@ -81,15 +81,15 @@ ul {
 /* Container Original */
 .container {
   max-width: 1158px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 16px;
+  padding-right: 16px;
   margin-left: auto;
   margin-right: auto;
   align-items: center;
 }
 
-/* Container Mobile 428p */
-@media screen and (min-width: 428px) {
+/* Container Mobile 428px */
+@media screen and (min-width: 320px) {
   .container {
     width: 428px;
   }
@@ -98,7 +98,7 @@ ul {
 /* Container Tablet 768px */
 @media screen and (min-width: 768px) {
   .container {
-    width: 768px;
+    width: calc((100%-24px) / 2);
   }
 }
 
@@ -209,32 +209,13 @@ ul {
 /* Menu Adress */
 .address-item {
   font-style: normal;
+  margin-left: auto;
 }
 
 @media (max-width: 767px) {
   .address-item {
     display: none;
   }
-}
-
-.address-list {
-  display: flex;
-  gap: 40px;
-}
-
-.address-links {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
-  color: #434455;
-  letter-spacing: 0.02em;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition-property: color;
-}
-
-.address-links:hover,
-.address-links:focus {
-  color: #404bbf;
 }
 
 @media screen and (min-width: 1158px) {
@@ -246,15 +227,10 @@ ul {
   }
 }
 
-@media screen and (max-width: 1157px) {
-  .address-links:first-child {
-    margin-bottom: 12px;
-  }
-}
 
 @media screen and (min-width: 768px) {
   .address-links {
-    color: var(--color-slate);
+    color: #434455;
     font-weight: 400;
     font-size: 12px;
     line-height: 1.17;
@@ -268,7 +244,12 @@ ul {
     font-size: 16px;
     line-height: 1.5;
     display: inline-block;
-  } 
+  }
+}
+
+.address-links:hover,
+.address-links:focus {
+  color: #404bbf;
 }
 
 /* First Section */
@@ -509,6 +490,16 @@ ul {
   }
 }
 
+@media screen and (min-width: 768px) and (max-width: 1157px) {
+  .features-card-titles {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.11111;
+    letter-spacing: 0.02em;
+    color: #2e2f42;
+  }
+}
+
 .features-card-text {
   letter-spacing: 0.02em;
   font-size: 16px;
@@ -519,6 +510,16 @@ ul {
   .features-card-text {
     display: flex;
     justify-content: center;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #434455;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1157px) {
+  .features-card-text {
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
@@ -574,7 +575,6 @@ ul {
     flex-wrap: wrap;
     row-gap: 64px;
     column-gap: 40px;
-    margin-left: 85px;
   }
 }
 
@@ -674,6 +674,13 @@ ul {
   padding-bottom: 120px;
 }
 
+@media screen and (max-width: 1157px) {
+  .portfolio-section {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+}
+
 .portfolio-title {
   text-align: center;
   letter-spacing: 0.02em;
@@ -702,10 +709,16 @@ ul {
 }
 
 .portfolio-card {
-  width: calc((100% - 48px) / 3);
+  
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
-  width: auto;
+ 
+}
+
+@media screen and (min-width: 768px) {
+  .portfolio-card {
+    width: calc((100%-24px) / 2);
+  }
 }
 
 .portfolio-card:hover {
